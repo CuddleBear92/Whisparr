@@ -98,6 +98,7 @@ class QueueRow extends Component {
       indexer,
       outputPath,
       downloadClient,
+      downloadClientHasPostImportCategory,
       estimatedCompletionTime,
       timeleft,
       size,
@@ -387,6 +388,7 @@ class QueueRow extends Component {
         <RemoveQueueItemModal
           isOpen={isRemoveQueueItemModalOpen}
           sourceTitle={title}
+          canChangeCategory={!!downloadClientHasPostImportCategory}
           canIgnore={!!series}
           isPending={isPending}
           onRemovePress={this.onRemoveQueueItemModalConfirmed}
@@ -417,6 +419,7 @@ QueueRow.propTypes = {
   indexer: PropTypes.string,
   outputPath: PropTypes.string,
   downloadClient: PropTypes.string,
+  downloadClientHasPostImportCategory: PropTypes.bool,
   estimatedCompletionTime: PropTypes.string,
   timeleft: PropTypes.string,
   size: PropTypes.number,
